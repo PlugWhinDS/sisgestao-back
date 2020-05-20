@@ -1,0 +1,23 @@
+version: '3.5'
+networks: 
+    backend:
+services:
+    sisgestao-hom-back:
+        image: node
+        working_dir: /app
+        command: ./docker/scripts/start-app.sh
+        container_name: sisgestao-hom-back
+        hostname: sisgestao-hom-back
+        volumes: 
+            - ../.:/app
+        environment: 
+            - USERNAME=sisgestao-hom
+            - PASSWORD=sisgestao-hom
+            - DB_NAME=sisgestao-hom
+            - DB_DIALECT=postgres
+            - DB_HOST=13.58.22.229
+        networks: 
+            - backend
+        ports:
+            - 3001:3000
+           
