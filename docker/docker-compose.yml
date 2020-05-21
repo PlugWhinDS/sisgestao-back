@@ -5,12 +5,13 @@ services:
     sisgestao-hom-back:
         image: node
         working_dir: /app
-        command: bash -c "ls -la && pwd" #./docker/scripts/start-app.sh
+        command: ./docker/scripts/start-app.sh
         container_name: sisgestao-hom-back
         hostname: sisgestao-hom-back
         volumes: 
             - ../.:/app
             - /var/run/docker.sock:/var/run/docker.sock
+            - /var/jenkins_home/workspace/sisgestao-hom-back:/app
         environment: 
             - USERNAME=sisgestao-hom
             - PASSWORD=sisgestao-hom
