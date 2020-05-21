@@ -11,7 +11,7 @@ services:
         volumes: 
             - ../.:/app
             - /var/run/docker.sock:/var/run/docker.sock
-            - /var/jenkins_home/workspace/sisgestao-hom-back:/app
+            - /var/jenkins_home/workspace/sisgestao-hom-back/:/app
         environment: 
             - USERNAME=sisgestao-hom
             - PASSWORD=sisgestao-hom
